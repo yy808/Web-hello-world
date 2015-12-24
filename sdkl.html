@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>圣诞快乐</title>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	  box-sizing: border-box;
+	}
+	#container{
+			  margin-top:30px; 
+		    width: 300px;
+		    height: 300px;
+		    margin: 0 auto;
+	}
+	.sprite{
+		width: 25%;
+		height: 20%;
+		display: inline-block;
+		border: 1px solid #ff0;
+	}
+	.gift-5{
+		background-color: #f00;
+	}
+	.gift0{
+		background-color: #fff;
+	}
+	.gift1{
+		background-color: #00f;
+	}
+	.gift2{
+		background-color: #0ff;
+	}
+	.gift5{
+		background-color: #f0f;
+	}
+	.gift10{
+		background-color: #ff0;
+	}
+	.invalid{
+		background-color: #000;
+	}
+</style>
+<script type="text/javascript">
+	var totalGoal=0;
+	var gifts=[-5,-5,0,0,0,0,0,0,0,1,1,1,1,2,2,2,5,5,10]; 
+	function init(){
+		// body...
+		var container=document.querySelector("#container");
+		for(var i=0;i<4;i++){
+			for (var j = 0; j <4; j++) {
+				var _div=document.createElement("div");
+				//_div.id="s"+i+j;
+				var gifIndex=~~(Math.random()*gifts.length);
+				_div.className="sprite"+" gift"+gifts[gifIndex];
+				_div.dataset.i=i;
+				_div.dataset.j=j;
+				_div.dataset.valid=true;
+				_div.dataset.gift=gifts[gifIndex];
+				container.appendChild(_div);
+			};
+		}
+
+		document.addEventListener("click",clickSprite,false);
+	}
+	function clickSprite(){
+		var _sprite=event.target;
+		if(_sprite.className.indexOf("sprite")!==-1){
+			if(_sprite.dataset.valid){
+				totalGoal+=_sprite.dataset.gift;
+				_sprite.className= _sprite.className+" invalid";
+			}
+		}else{
+
+		}
+	}
+	document.addEventListener("DOMContentLoaded",init,false);
+</script>
+<body>
+<div>圣诞快乐，请拿礼物！</div>
+<div id="container"></div>
+
+</body>
+</html>
