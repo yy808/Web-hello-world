@@ -1,0 +1,208 @@
+function createClock(hour,minute,second){
+	var clock=new Object();
+	clock.hour=hour;
+	clock.minute=minute;
+	clock.second=second;
+	clock.showHour=function(){
+	alert(this.hour+":"+this.minute+":"+this.second)
+	};
+	return clock;
+};
+var newClock=createClock(12,12,12);
+newClock.showHour();
+
+function createClock(hour,minute,second){
+	var clock=new Object();
+	clock.hour=hour;
+	clock.minute=minute;
+	clock.second=second;
+	clock.showHour=function(){
+	alert(this.hour+":"+this.minute+":"+this.second)
+	}
+}
+var newClock=new clock(12,12,12);
+alert(newClcok.hour)
+
+<html>
+	<head>
+		<script type="text/javascript">
+			function validate_reauired(fieled,alerttxt)
+			{
+			with(field)
+				{
+				if(value==null||value=="")
+					{alert(alerttxt);return false}
+				else{returm true}
+				}
+			}
+			function validate_form(thisform)
+			{
+			with(thisform)
+				{
+				if(validate_required(mail,"email must be falsed out!")==false);
+					{email.focus();return false}
+				}
+			}
+		</script>
+	</head>	
+	<body>
+		<form action="submitpage.htm" onsubmit="return validate_form(this)" method="post">
+			email:<input type="text" name="email" size="30">
+			<input type="submit" value="submit">
+		</form>
+	</body>
+</html>
+ 
+ <html>
+ 	<head>
+ 		<script typw="text/javascript">
+ 			function validate_email(field,alerttxt)
+ 			{
+ 			with(field)
+ 				{
+ 			apos=value.indexOf("@")
+ 			dopos=value.lastIndexOf(".")
+ 			if(apos<1||dotpos-app<2)
+ 				{alert(alerttxt);return false}
+ 			else{return true}
+ 			    }
+ 			}
+ 			function validated_form(thisform)
+ 			{
+ 			with(thisform)
+ 			{
+ 				if(validate_email(email,"not a valid e-mail address")==false)
+ 				{email.focus();return false}
+ 			}
+ 			}
+ 		</script>
+ 	</head>
+ 	<body>
+ 		<form action="submitpage.htm" onsubmit="return validate_form(this);method="post">
+ 		email:<input type="text" name="email" size="30">
+ 		<input type="submit" value="submit">
+ 		</form>
+ 	</body>
+ </html>
+
+ <!doctype html>
+ <html>
+ 	<head>
+ 	</head>
+ 	<body>
+ 		<p id="intro">hello world</p>
+ 		<p>beliyanshi<b>getElementById</b>fangfa!</p>
+ 		<script>
+ 			x=document.getElementById('intro');
+ 			document.write("<p>id="intro"de duan luo shi :"+x.innerHTML+"</p>")
+ 		</script>
+ 	</body>
+ </html>
+
+ <!doctype html>
+ <html>
+ 	<body>
+ 		<script>
+ 			document.write(Date());
+ 		</script>
+ 	</body>
+ </html>
+ <p id="p1">hello world!</p>
+ <script>
+ 	documnet.getElementById("p1").innerHTML="NEW TEXT!";
+ </script>
+ <h1 id="header"> old header</h1>
+ <script>
+ 	var elemnet=document.getElementById("header");
+ 	element.innerHTML="NEW HEADER";
+ </script>
+
+ <p id="2">hello world</p>
+ <script>
+ 	document.getElementById("p2").style.color="blue";
+ </script>
+ <h1 onclick="this.innerHTML="Thank you">please click here</h1>
+
+ <script>
+ 	document.getElementById("mybtn").onclick=function(){displayDate()};
+ 	function displayDate(){
+ 		document.getElementById("demo").innerHTML=Date();
+ 	}
+ </script>
+ <p id="demo"></p>
+
+<!doctype html>
+<html>
+	<body onload="checkCookies()">
+		<script>
+		function checkCookies()
+		{
+		if(navigatoe.cookieEnabled==true)
+		{alert("yiqiyong cookie")}
+		else{
+		alert(wweiqidong cookie)
+		}
+		}
+		</script>
+	</body>
+</html>
+<script>
+	function myFunction()
+	{
+	var x=document.getElementById("fname");
+	x.value=x.value.toUpperCase();
+	}
+</script>
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:green;width:120px;height:20px;padding:40px;color:#ffffff;">ba shu biao yi dao shang mian shi</div>
+<script>
+	function mOVer(obj)
+	{
+	obj.innerHTML='thank you'
+	}
+	function mOut(obj)
+	{
+	obj.innerHTML="ba shu biao yi dao shang mian"
+	}
+<script>
+
+<div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:green;color:#fffff;width:90px;height:20px;padding:30px;font-size:12px;">please click here</div>
+<script>
+	function mDown(obj)
+	{
+	obj.style.backgroundColor="#1ecsa";
+	obj.innerHTML=""
+	}
+	function mUp(obj)
+	{
+	obj.style.backgroundColor="green";
+	obj.innerHTML=""
+	}
+</script>
+
+<script>
+	function myFunction(x)
+	{
+	x.style.background="yellow";
+	}
+</script>
+<h1 onmouseover="style.color="red"" onmouseout=style.color="blue"">
+
+<div id="div1">
+	<p id="p1">this is a paragraph</p>
+	<p id="p2">this is another paragraph</p>
+</div>
+<script>
+	var para=document.createElementa("p")
+	var node=document.createTextNodea("this is new paragraph.");
+	para.appendChild(node);
+	var element=document.getElementById("div1");
+	element.appendChild(para)
+</script>
+
+<script type="text/javascript">
+var str="hello world"
+document.write(str.indexOf("hello")+"<br />");
+document.write(str.indexOf("world")+"<br />");
+document.write(str.indexOf("World"))
+
+document.write(str.replace(/Microsoft/,"w3cschool"))

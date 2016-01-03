@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>chengjibiao</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			.menu{
+				position: absolute;
+				background-color:#BDAFAF;
+				border:1px solid red;
+				height:146px;
+				display:none;
+			}
+			.menu li{
+				height:20px;
+				border-bottom:1px solid red;
+				list-style-type:none;
+			}
+			table{
+				border-collapse:collapse;
+				border:1px solid red;
+				width:400px;
+				
+			}
+			#headr{
+				font-weight:bold;
+				font-size:20px;
+				color:red;
+			}
+			th{
+				color:red;
+			}
+			tr{
+				font-size:15px;
+				border:1px solid green;
+			    	text-align:center;
+			}
+			td{
+				width:80px;
+				height:15px;
+			}
+			
+			.selected{
+				background-color: #eee;
+			}
+		</style>
+		<script type="text/javascript">
+
+		/*function contextmenuhandler(e){
+			e.stopPropagation();
+			e.preventDefault();
+			document.getElementById("list").style.display="block";
+			}
+		document.addEventListener("contextmenu",contextmenuhandler,false)*/
+		/*function addRowAbove(){
+			
+			var myTable=document.getElementById("myTable")
+			var y=myTable.insertRow(myTable.rows.lengt)
+			var cell1=y.insertCell(0)
+			var cell1=y.insertCell(1)
+			var cell2=y.insertCell(2)
+			var cell3=y.insertCell(3)
+			var cell4=y.insertCell(4)
+		}*/
+		
+		/*function addRowDown(){
+			
+			var myTable=document.getElementById("myTable")
+			var y=myTable.insertRow(myTable.rows.length)
+			var cell1=y.insertCell(0)
+			var cell1=y.insertCell(1)
+			var cell2=y.insertCell(2)
+			var cell3=y.insertCell(3)
+			var cell4=y.insertCell(4)
+		}
+		/*function deleteRow(){
+			var myTable=document.getElementById("myTable")
+			for(var i=myTable.rows.length;i=1;i--)
+			{
+			myTable.deleteRow(tr)
+			//var td=document.getElementsByTagName("td")	
+			var tr=document.getElementsByTagName("tr")
+			tr.deleteCell(row[i])		
+		    }
+	    }
+	   
+	    	
+	    //document.addEventListener("");*/
+	    function addRowAbove()
+	    {
+	  var newTr=document.createElement("tr");
+	var tr=document.querySelector("td.selected".parentNode);
+	var myTable=document.getElementById("myTable");
+	myTable.insertBefore(newTr,tr)
+          	  }
+
+	 
+
+	    function showMenu(e){
+	    	//debugger;
+	    	//var menuDiv=document.createElement("div");
+	    	//menuDiv.innerHTML='Menu';
+	    	//menuDiv.classList.add("menu");
+	    	e.stopPropagation();
+		e.preventDefault();
+	    	if(!document.querySelector("td.selected")){
+	    		return;
+	    	}
+		var select=document.querySelectorAll("td.selected")
+		if(select.length==1)
+		{
+		 menu1.style.display="block"
+		 menu1.style.top=e.clientY+"px";
+		 menu1.style.left=e.clientX+"px";
+		}else if(select.length=2){
+
+	    	menu1.style.display="block"
+		}
+		
+	    	//document.querySelector("body").appendChild(menuDiv);
+	    }
+	    function toggleSelected(e){
+	    	var target=e.target;
+	    	console.log(target);
+	    	if(target.nodeName==='TD'){
+	    		target.classList.toggle('selected');
+	    	}
+	    	//debugger; 
+	    }
+	    function init(){
+	    	document.querySelector("table").addEventListener("contextmenu",showMenu,false);
+	    	document.querySelector("table").addEventListener("click",toggleSelected,false);
+	    }
+	    </script>
+	</head>
+	<body onload="init();">
+        <table border="1" id="myTable">
+        	<caption>xueshengchengjibiao</caption>
+        	<tr>
+         		<th >Name</th>
+         		<th >Sex</th>
+         		<th>Math</th>
+         		<th>English</th>
+         		<th>Computer</th>
+   
+         	</tr>
+         	<tr>
+         		<td >Danny</td>
+         		<td>male</td>
+         		<td>89</td>
+         		<td>68</td>
+         		<td>90</td>
+         	</tr>
+         	<tr>
+         		<td>Janny</td>
+         		<td>female</td>
+         		<td>79</td>
+         		<td>90</td>
+         		<td>80</td>
+         	</tr>
+         	<tr>
+         		<td>Bob</td>
+         		<td>male</td>
+         		<td>89</td>
+         		<td>98</td>
+         		<td>89</td>
+         	</tr>
+         </table>
+         		<ul  id="menu1" class="menu">
+         			<li  onclick="addRowAbove()">add  rowabove</li>
+         			<li  onclick="addRowDown()">add rowdown</li>
+         			<li onclick="addCellLeft()">add cellleft</li>
+         			<li onClick="addCellRight()">add cellright</li>
+         			<li onclick="colationRow()">colationrow</li>
+         			<li onclick="colationCell()">colationcell</li>
+         			<li  onclick="nofunction()">nofunction</li>
+         		</ul>
+       
+	</body>
+</html>

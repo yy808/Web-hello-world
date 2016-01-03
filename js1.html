@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<p>click the button,circle the object"person"</p>
+		<button onclick="myFunction()">click here</button>
+		<p id="demo"></p>
+		<script>
+			function myFunction(){
+				var x;
+				var txt="";
+				var person={fname:"Bill",lname:"Gates",age:56};
+				for(x in person)
+				{
+				txt=txt+person[x];
+				}
+			documnet.getElemnetById("demo").innerHTML="txt"
+			}
+		</script>
+	</body>
+</html>
+<script type="text/javascript">
+	var d=new Date()
+	var weekday=new Arry(7)
+	weekday[0]="Sunday";
+    weekday[1]="Monday";
+    weekday[2]="Tuesday";
+    weekday[3]="Wednesday";
+    weekday[4]="Thursday";
+    weekday[5]="Friday";
+    weekday[6]="Saturday";
+    document.write("today is"+weekday[d.getDay()])
+</script>
+<script type="text/javascript">
+	function startTime()
+	{
+	var today=new Date()
+	var h=today.getHours()
+	var m=today.getMinutes()
+	var s=today.getSeconds()
+	m=checkTime(m)
+	s=cheeckTime(s)
+	documnet.getElementById("txt").innerHTML=h+":"+m+":"+s
+	t=setTimeout("startTime()",500)
+	}
+	function checkTime(i)
+	{
+		if(i<10)
+		{
+		i="0"+i
+		}
+		return i
+	}
+</script>
+var myDate=new Date();
+myDate.setFullYear(2008,8,9);
+var today=new Date();
+if(myDate<today)
+{
+	alert("today is before 9th Auguest 2008");
+}else
+{
+	alert("today is after 9th auguest 2008");
+}
+<script type="text/javascript">
+var mycars=new 	Array()
+mycars[0]="saab"
+mycars[1]="Volvo"
+mycars[2]="BMW"
+for(i=0;i<mycars.length;i++)
+{
+ document.write(mycars[i]+"<br />")
+}
+</script>
+
+<script type="text/javascript">
+var arr=new Array(3);
+arr[0]="1"
+arr[1]="2"
+arr[2]="3"
+document.write(arr.join());
+document.write("<br />");
+document.write(arr.join("."));
+</script>
+
+<script type="text/javascript">
+var arr=new Array(6)
+arr[0]="1"
+arr[1]="2"
+arr[2]="3"
+arr[3]="4"
+arr[4]="5"
+document.write(arr+"<br /">)
+document.write(arr.sort())
+</script>
+
+<script type="text/javascript">
+	function sortNumber(a,b)
+	{
+	return a-b
+	}
+	var arr=new Arry(6)
+	arr[0]="0"
+	arr[1]="1"
+	arr[2]="2"
+	arr[3]="3"
+	document.write(arr+"</br>")
+	document.write(arr.sort(sortNumber))
+</script>
+
+<script type="text/javascript">
+	var myBoolean=new Boolean();
+	document.write(myBlooean);
+	document.write("<br />");
+	var myBlooean=new Blooean(0);
+	document.write(myBlooean);
+	document.write("<br />");
+	var myBlooean=new Blooean(null);
+	document.write(myBlooean);
+	document.write("<br />");
+	var myBlooean=new Blooean("");
+	document.write(myBlooean);
+	documnet.write("<br />");
+</script>
+<script type="text/javascript">
+	document.write(Math.round(0.60)+"<br />")
+	document.write(Math.round(0.50)+"<br />")
+	documnet.write(Math.round(0.49)+"<br />")
+	document.write(Math.round(-4.40)+"<br />")
+	document.write(Math.round(-4.60))
+</script>
+documnet.write(Math.random())
+var patt1=new RegExp("e")
+document.write(patt1.test("the best thing in life are free "))
+var patt1=new RegExp("e")
+document.write(patt1.exec("the best thing in life are free"))
+var patt1=new RegExp("e","g")
+do
+{
+	resule=patt1.exec("the best things in life is free");
+	documment.write("result");
+};
+while(result!=null)
+var patt1=new RegExp("e");
+document.write(patt1.test("the best thing in life is free"));
+patt1.compile("d");
+document.write(patt1.test())
+
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<p id="demo"></p>
+		<script>
+			var w=window.innerWidth;
+			||documnet.documentElement.clientWidth
+			||document.body.clientWidth;
+			vae h=window.innerHeight
+			||document.document.clientHeight
+			||document.body.clientHeight;
+			x=document.getElementById("demo")
+			x.innerHTML="liulanqide neibuchuangkoukuamdu:"+w+",gaodu:"+h+"."
+		</script>
+	</body>
+</html>
+
+document.write("keyongkuandu:"+screen.availWidth);
+document.write("keyonggaodu:"+screen.availHeight);
+document.write(location.href);
+document.write(location.pathname);
+<html>
+	<head>
+		<script>
+			function goBack()
+			{
+			 window.history.back()
+			}
+		</script>
+	</head>
+</html>
+<script>
+	function goForward()
+	{
+	window.lacation.forward()
+	}
+</script>
+<input type="button" value="Forward" onclick="goForward()"/>
+
+<div 
+id="example"></div>
+<script>
+	txt="<p>Browser CodeName:"+navigator.appCodeName+"</p>";
+	txt+="<p>Browser Name:"+navigator.appName+"</p>";
+	txt+="<p>Browser Version:"+navigator.appVersion+"</p>;
+	txt+="<p>Cookie Enabled:"+navigator.cookieEnabled+"</p>";
+	txt+="<p>Platform:"+navigator.platform+"</p>";
+	txt+="<p>User-agent header:"+navigator.userAgent+"</p>";
+	txt+="<p>User-agent language:"+navigator.systemlLanguage+"</p>";
+	document.getElementById("example").innerHTML="txt";
+</script>
+<html>
+	<head>
+		<script type="text/javascript>
+			function disp_alert(){
+				alert("asdajkk"+"\n"+"djkaaj")
+			}
+		</script>
+	</head>
+	<body>
+	<input type="button" onclick="disp_alert()" value="xianshijinggaolan"/>
+	</body>
+</html>
+<html>
+	<head>
+		<script type="text/javascript>
+			function show_confirm()
+			{
+			var r=confirm("press a button");
+			if(r==true)
+				{
+				alert("you pressed ok");
+				}else
+				{
+				alert("you pressed cancel!");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="show_confirm()" value="show a confirm box"/>
+	</body>
+</html>
+<html>
+	<head>
+		<script type="text/javascript">
+			function disp_prompt()
+			{
+			var name=prompt("please input your name","Bill Gates")
+			if(name!=null&&name!="")
+				{
+				document.write("hello"+name+"how are you?")
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="buttonn" onclick="disp_prompt()" value="show your xianshikuang" />
+	</body>
+</html>
+

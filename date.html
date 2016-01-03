@@ -1,0 +1,100 @@
+var day=newDate().getDay()
+switch(day){
+	case 0:
+	 x="Today it is sunday";
+	 break;
+	case 1:
+	 x="Today it is Monday";
+	 break;
+	case 2:
+	 x="Today it is Tuesday";
+	 break;
+	case 3:
+	 x="Today it is Wednesday";
+	 break;
+	case 4:
+	x="Today it is Thursday";
+	break;
+	case 5:
+	x="Today it is Friday";
+	break;
+	case 6:
+	x="Today it is Saturday";
+	break;
+}
+
+for(var i=0; i<cars.length;i++)
+{
+document.write(cars[i]+"<br/>");
+}
+
+<script>
+function myFunction(){
+	var x;
+	var tex="";
+	var person={fname:"bill",lanme:"gates",age:87};
+	for(x in person)
+	{
+	txt=txt+person[x];
+	}
+	document.getElementById("demo").innerHTML=txt;
+}
+</script>
+while(i<5)
+{
+	x=x+"the name is"+"<br>";
+	i++;
+}
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var txt="";
+			function message(){
+			try{
+				adddlert("welcome guest!");
+			   }
+			catch(error)
+			  {
+			txt="there was an error on this page.\n\n";
+			txt+="error description:"+err.message+"\n\n";
+			txt+="click ok to continue.\n\n";
+			alert(txt);
+			  }
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="view message" onclick="message()">
+	</body>
+
+function validate_required(field,alerttxt)
+{
+	with(field)
+}
+if(value===null)||value="")
+	{alert(alerttxt);return false}
+
+else{return true}
+}
+}
+function validate_email(field,alerttxt)
+{
+	with(field)
+	{
+	apos=value.indexOf("@")
+	dotpos=value.lastIndexOf(".")
+	if(apos<1||dotpos-apos<2)
+	{alert(alerttxt);return false}
+	else{return true}
+	}
+}
+function validate_form(thisform)
+{
+ with(thisform)
+ {
+ if(validate_email(email,"not a valid e-mail address!")==false)
+ {email.focus();return false}
+ }	
+}
+function validate_form(thisform)

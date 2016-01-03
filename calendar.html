@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing:border-box;
+			}
+			td, th{
+				text-align: center;
+				font-size: 12px;
+				width: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			var now = new Date();
+			var t_d = now.getDate();
+			var t_m = now.getMonth();
+			var t_y = now.getFullYear();
+			function getDays(y, m) {
+				return new Date(y, m + 1, 0).getDate();
+			}
+			function getFirstDay(time) {
+				var _date = new Date(time);
+				_date.setDate(1);
+				return _date;
+			}
+			var firstday = getFirstDay(now.getTime());
+			var dayofweek = firstday.getDay();
+			var startDay = new Date(firstday.getTime() - dayofweek * 24 * 60 * 60 * 1000);
+			var flag = true;
+			var daytime = 24 * 60 * 60 * 1000;
+			var htmlstr = "<tr>";
+				while (flag) {
+					console.log(startDay);
+					htmlstr += "<td>" + startDay.getDate() + "</td>"
+					if(startDay.getDay() === 6){
+					htmlstr+="</tr><tr>"
+				}
+				if (startDay.getDay() === 6 && startDay.getTime() > new Date(t_y, t_m + 1, 0).getTime()) {
+					htmlstr=htmlstr.replace(/<tr>$/,"")
+						flag = false;
+					} else {
+						startDay = new Date(startDay.getTime() + daytime);
+					}
+				}
+				function load() {
+					var pt = document.querySelector("table");
+					pt.innerHTML = pt.innerHTML + htmlstr;
+				}
+
+				/*
+				第一天是周日，第一行是上个月的
+				如果本月加上月补充总共五行，补充下月数据一行
+
+				 */
+			</script>
+		</head>
+		<body onload="load()">
+			<table>
+				<tr><td>&lt;&lt;</td><td colspan="5">2015</td><td>&gt;&gt;</td></tr>
+				<tr><td>&lt;</td><td colspan="5">12</td><td>&gt;</td></tr>
+				<tr><td>日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td></tr>
+			</table>
+		</body>
+	</html>
